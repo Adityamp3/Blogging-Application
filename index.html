@@ -19,8 +19,68 @@
     </div>
     <!-- </nav> -->
 
-    <div class="hero"></div>
-    <div class="hero"></div>
+    <div class="container1">
+      <div class="tabs">
+        <button id="loginTab" class="active">Login</button>
+        <button id="signupTab">Sign Up</button>
+      </div>
+      <div id="loginForm" class="form-container active">
+        <form>
+          <label for="loginUsername">Username</label>
+          <input type="text" id="loginUsername" name="loginUsername" required />
+          <label for="loginPassword">Password</label>
+          <input
+            type="password"
+            id="loginPassword"
+            name="loginPassword"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div id="signupForm" class="form-container">
+        <form>
+          <label for="signupUsername">Username</label>
+          <input
+            type="text"
+            id="signupUsername"
+            name="signupUsername"
+            required
+          />
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" name="signupEmail" required />
+          <label for="signupPassword">Password</label>
+          <input
+            type="password"
+            id="signupPassword"
+            name="signupPassword"
+            required
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginTab")
+        .addEventListener("click", function () {
+          document.getElementById("loginForm").classList.add("active");
+          document.getElementById("signupForm").classList.remove("active");
+          this.classList.add("active");
+          document.getElementById("signupTab").classList.remove("active");
+        });
+
+      document
+        .getElementById("signupTab")
+        .addEventListener("click", function () {
+          document.getElementById("signupForm").classList.add("active");
+          document.getElementById("loginForm").classList.remove("active");
+          this.classList.add("active");
+          document.getElementById("loginTab").classList.remove("active");
+        });
+    </script>
+
     <script src="script.js"></script>
   </body>
 </html>
